@@ -254,6 +254,61 @@
       margin-top: 0.15rem;
     }
 
+    .pub-card {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+    }
+
+    .pub-card .pub-teaser {
+      flex-shrink: 0;
+      width: 260px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .pub-card .pub-teaser img {
+      width: 100%;
+      display: block;
+    }
+
+    .pub-card .pub-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .pub-links {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pub-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .pub-links a:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    @media (max-width: 600px) {
+      .pub-card { flex-direction: column; }
+      .pub-card .pub-teaser { width: 100%; }
+    }
+
     /* Contact */
     .contact-grid {
       display: grid;
@@ -350,10 +405,20 @@
   <!-- Publications -->
   <section>
     <h2><span class="icon">📄</span> Publications</h2>
-    <div class="pub-item">
-      <div class="pub-title"><a href="https://lxazjk.github.io/FlashAR/" target="_blank">FlashAR: Efficient Post-Training Acceleration for Autoregressive Image Generation</a></div>
-      <div class="pub-authors"><strong>Junkang Zhou</strong>*, Yefei He*, Feng Chen*, Weijie Wang, Bohan Zhuang</div>
-      <div class="pub-venue">arXiv 2025</div>
+    <div class="pub-card">
+      <a href="https://lxazjk.github.io/FlashAR/" target="_blank" class="pub-teaser">
+        <img src="assets/flashar-teaser.png" alt="FlashAR teaser">
+      </a>
+      <div class="pub-info">
+        <div class="pub-title"><a href="https://lxazjk.github.io/FlashAR/" target="_blank">FlashAR: Efficient Post-Training Acceleration for Autoregressive Image Generation</a></div>
+        <div class="pub-authors"><strong>Junkang Zhou</strong>*, Yefei He*, Feng Chen*, Weijie Wang, Bohan Zhuang</div>
+        <div class="pub-venue">arXiv 2025</div>
+        <div class="pub-links">
+          <a href="https://lxazjk.github.io/FlashAR/" target="_blank"><i class="fas fa-globe"></i> Project</a>
+          <a href="https://github.com/lxazjk/LlamaGen-Flash" target="_blank"><i class="fab fa-github"></i> Code</a>
+          <a href="https://huggingface.co/lxazjk/LlamaGen-Flash" target="_blank">🤗 Models</a>
+        </div>
+      </div>
     </div>
   </section>
 
