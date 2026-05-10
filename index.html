@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junkang Zhou | lx_zjk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #ffffff;
+      --bg-card: #f8f9fa;
+      --text: #1a1a2e;
+      --text-secondary: #555;
+      --accent: #2563eb;
+      --accent-light: #dbeafe;
+      --border: #e5e7eb;
+      --gold: #d4a017;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Header */
+    header {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    header h1 .wave {
+      display: inline-block;
+      animation: wave 2.5s infinite;
+      transform-origin: 70% 70%;
+    }
+
+    @keyframes wave {
+      0%, 60%, 100% { transform: rotate(0deg); }
+      10%, 30% { transform: rotate(14deg); }
+      20% { transform: rotate(-8deg); }
+      40% { transform: rotate(-4deg); }
+      50% { transform: rotate(10deg); }
+    }
+
+    .tagline {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      font-weight: 400;
+      margin-top: 0.5rem;
+    }
+
+    .social-links {
+      margin-top: 1.2rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .social-links a {
+      color: var(--text-secondary);
+      font-size: 1.25rem;
+      transition: color 0.2s;
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Sections */
+    section {
+      padding: 1.8rem 0;
+    }
+
+    section + section {
+      border-top: 1px solid var(--border);
+    }
+
+    section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    section h2 .icon {
+      font-size: 1.1rem;
+    }
+
+    /* About */
+    .about-list {
+      list-style: none;
+    }
+
+    .about-list li {
+      padding: 0.35rem 0;
+      padding-left: 1.6rem;
+      position: relative;
+      color: var(--text-secondary);
+    }
+
+    .about-list li::before {
+      content: attr(data-icon);
+      position: absolute;
+      left: 0;
+      top: 0.35rem;
+    }
+
+    .about-list li strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .about-list a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .about-list a:hover {
+      text-decoration: underline;
+    }
+
+    /* Honors */
+    .honors-list {
+      list-style: none;
+    }
+
+    .honors-list li {
+      padding: 0.5rem 0;
+      padding-left: 1.6rem;
+      position: relative;
+    }
+
+    .honors-list li::before {
+      content: attr(data-icon);
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+    }
+
+    .honors-list .title-text {
+      font-weight: 500;
+    }
+
+    .honors-list .detail {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    /* Tech Stack */
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tech-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .tech-tag:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .tech-tag img {
+      height: 16px;
+      width: 16px;
+    }
+
+    /* GitHub Stats */
+    .stats-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .stats-row img {
+      border-radius: 8px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Publications */
+    .pub-item {
+      padding: 0.8rem 0;
+    }
+
+    .pub-item .pub-title {
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .pub-item .pub-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .pub-item .pub-title a:hover {
+      color: var(--accent);
+    }
+
+    .pub-item .pub-authors {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      margin-top: 0.2rem;
+    }
+
+    .pub-item .pub-venue {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-top: 0.15rem;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.5rem 1.2rem;
+      align-items: center;
+    }
+
+    .contact-grid .label {
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.92rem;
+    }
+
+    .contact-grid .value {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .contact-grid a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-grid a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2.5rem 0;
+      color: #aaa;
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 2.5rem 0 1.5rem; }
+      header h1 { font-size: 1.6rem; }
+      .container { padding: 0 1.2rem; }
+      .stats-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <img class="avatar" src="https://github.com/lxazjk.png" alt="avatar">
+    <h1>Hi there <span class="wave">👋</span>, I'm lx_zjk!</h1>
+    <p class="tagline">Junkang Zhou &middot; Zhejiang University &middot; CS Undergraduate</p>
+    <div class="social-links">
+      <a href="https://github.com/lxazjk" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:3230104546@zju.edu.cn" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://lxazjk.github.io/FlashAR/" title="FlashAR"><i class="fas fa-file-alt"></i></a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section>
+    <h2><span class="icon">🌟</span> About Me</h2>
+    <ul class="about-list">
+      <li data-icon="🏫"><strong>Junior undergraduate</strong> at Zhejiang University (ZJU), majoring in Computer Science.</li>
+      <li data-icon="🔭">Passionate about <strong>Large Language Models (LLMs)</strong>, <strong>HPC</strong>, and especially interested in <strong>MLSys</strong>.</li>
+      <li data-icon="🚀">Currently an intern at <strong>Seed Speech (ByteDance Group)</strong>, and concurrently at <strong><a href="https://bohanzhuang.github.io/" target="_blank">ZIP Lab</a></strong>.</li>
+    </ul>
+  </section>
+
+  <!-- Honors -->
+  <section>
+    <h2><span class="icon">🏆</span> Honors</h2>
+    <ul class="honors-list">
+      <li data-icon="🌍">
+        <span class="title-text">ISC Student Cluster Competition</span>
+        <span class="detail"> — Global 5th Place</span>
+      </li>
+      <li data-icon="⚡">
+        <span class="title-text">ASC Student Supercomputer Challenge</span>
+        <span class="detail"> — Second Prize</span>
+      </li>
+      <li data-icon="🥇">
+        <span class="title-text">ICPC & CCPC Regional</span>
+        <span class="detail"> — Gold Medalist</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Publications -->
+  <section>
+    <h2><span class="icon">📄</span> Publications</h2>
+    <div class="pub-item">
+      <div class="pub-title"><a href="https://lxazjk.github.io/FlashAR/" target="_blank">FlashAR: Efficient Post-Training Acceleration for Autoregressive Image Generation</a></div>
+      <div class="pub-authors"><strong>Junkang Zhou</strong>*, Yefei He*, Feng Chen*, Weijie Wang, Bohan Zhuang</div>
+      <div class="pub-venue">arXiv 2025</div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section>
+    <h2><span class="icon">🛠️</span> Tech Stack</h2>
+    <div class="tech-grid">
+      <span class="tech-tag">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt=""> Python
+      </span>
+      <span class="tech-tag">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt=""> PyTorch
+      </span>
+      <span class="tech-tag">
+        <img src="https://img.icons8.com/color/48/nvidia.png" alt="" style="height:16px;width:16px;"> CUDA
+      </span>
+      <span class="tech-tag">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt=""> C++
+      </span>
+      <span class="tech-tag">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt=""> Linux
+      </span>
+      <span class="tech-tag">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt=""> Docker
+      </span>
+    </div>
+  </section>
+
+  <!-- GitHub Stats -->
+  <section>
+    <h2><span class="icon">📊</span> GitHub Stats</h2>
+    <div class="stats-row">
+      <img src="https://github-readme-stats.vercel.app/api?username=lxazjk&show_icons=true&theme=default&hide_border=true&bg_color=f8f9fa&title_color=1a1a2e&text_color=555&icon_color=2563eb" alt="GitHub Stats" loading="lazy">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lxazjk&layout=compact&hide_border=true&bg_color=f8f9fa&title_color=1a1a2e&text_color=555" alt="Top Languages" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section>
+    <h2><span class="icon">🌐</span> Find Me</h2>
+    <div class="contact-grid">
+      <span class="label"><i class="fab fa-github"></i> GitHub</span>
+      <span class="value"><a href="https://github.com/lxazjk" target="_blank">github.com/lxazjk</a></span>
+
+      <span class="label"><i class="fas fa-envelope"></i> Email</span>
+      <span class="value"><a href="mailto:3230104546@zju.edu.cn">3230104546@zju.edu.cn</a></span>
+
+      <span class="label"><i class="fas fa-book"></i> Blog</span>
+      <span class="value"><a href="https://lxazjk.github.io/zjk.github.io/" target="_blank">lxazjk.github.io/zjk.github.io</a></span>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Junkang Zhou. Built with ❤️
+  </footer>
+
+</div>
+
+</body>
+</html>
