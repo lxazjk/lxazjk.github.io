@@ -249,14 +249,56 @@
 
     /* Responsive */
     @media (max-width: 860px) {
-      .page { grid-template-columns: 1fr; gap: 40px; padding: 44px 24px 72px; max-width: 620px; }
+      .page {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        padding: 56px 24px 72px;
+        max-width: 640px;
+      }
       .sidebar { position: static; }
+      /* Once the sidebar unsticks, its vertical scroll-spy nav is redundant */
+      .side-nav { display: none; }
+      .pub { grid-template-columns: 1fr; gap: 20px; }
+      .pub-thumb { max-width: 460px; }
     }
-    @media (max-width: 520px) {
-      .pub { grid-template-columns: 1fr; gap: 16px; }
-      .pub-thumb { max-width: 340px; }
-      .side-name { font-size: 29px; }
+
+    @media (max-width: 560px) {
+      .theme-btn { top: 14px; right: 14px; }
+      .page { padding: 44px 18px 58px; gap: 30px; }
+
+      /* Compact profile card */
+      .avatar-ring { width: 122px; height: 122px; }
+      .side-name { font-size: 27px; margin-top: 18px; }
+      .side-handle { margin-top: 9px; }
+      .side-role { font-size: 14px; }
+      .side-social { gap: 26px; }
+
+      /* Tighter vertical rhythm */
+      section { margin-bottom: 36px; }
+      .sec-label { margin-bottom: 18px; }
+      .about { font-size: 15.5px; line-height: 1.8; }
+      .pub-title { font-size: 19px; }
+      .pub-thumb { max-width: 100%; }
+
+      /* Education / experience: logo spans both rows and the date drops to
+         its own line under the title, instead of squeezing it from the right */
+      .item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 14px;
+        row-gap: 5px;
+        align-items: center;
+        padding: 16px 0;
+      }
+      .item > img { grid-row: 1 / span 2; align-self: center; }
+      .item-title { font-size: 18px; }
+      .item-date { white-space: normal; }
+
+      /* Honors: category label drops beneath the award name */
+      .honor { gap: 12px; }
+      .honor-name span { display: block; margin-top: 2px; }
     }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       * { transition: none !important; animation: none !important; }
